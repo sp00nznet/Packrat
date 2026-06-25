@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+# Import package and CLI command are "packrat"; the PyPI distribution name is
+# "packrat-apk" because "packrat" is already taken on PyPI.
+name = "packrat-apk"
+version = "0.1.0"
+description = "Download and archive free Android APKs from Google Play, from your PC."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [{ name = "sp00nz" }]
+keywords = ["android", "apk", "google-play", "downloader", "archive"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: System :: Archiving",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "gplaydl>=2.1.5",
+    "typer>=0.12",
+    "rich>=13",
+    "textual>=0.60",
+    "httpx>=0.27",
+    "rich-pixels>=3.0",
+    "pillow>=10",
+]
+
+[project.urls]
+Homepage = "https://github.com/sp00nznet/Packrat"
+Repository = "https://github.com/sp00nznet/Packrat"
+Issues = "https://github.com/sp00nznet/Packrat/issues"
+
+[project.scripts]
+packrat = "packrat.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["packrat*"]

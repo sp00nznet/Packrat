@@ -1,0 +1,13 @@
+# Normalize line endings; check out as-is per OS.
+* text=auto
+
+*.py  text eol=lf diff=python
+*.sh  text eol=lf
+*.toml text eol=lf
+*.md  text
+
+# Binary assets — never normalize.
+*.gif binary
+*.png binary
+*.jpg binary
+*.svg -text
